@@ -1,130 +1,47 @@
 /* ==========================================
-   VARIABLES & THEMES (Auto Light/Night Mode)
+   VARIABLES & THEMES (Controlled by JS)
    ========================================== */
-:root {
-    /* Tema Terang (Light Mode) - Enak dilihat, tidak silau */
+/* Default / Light Mode */
+:root[data-theme="light"] {
     --bg-color: #f8fafc;
     --text-color: #334155;
-    --accent-color: #0284c7; /* Biru soft */
+    --accent-color: #0284c7;
     --border-color: #e2e8f0;
     --code-bg: #f1f5f9;
     --code-text: #b91c1c;
+    --btn-bg: #e2e8f0;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        /* Tema Gelap (Night Mode) - Cyberpunk Slate modern */
-        --bg-color: #0f172a; /* Biru gelap pekat */
-        --text-color: #cbd5e1; /* Abu-abu terang text */
-        --accent-color: #38bdf8; /* Biru cyan neon cyber */
-        --border-color: #1e293b;
-        --code-bg: #1e293b;
-        --code-text: #f43f5e; /* Rose merah code */
-    }
+/* Night Mode */
+:root[data-theme="dark"] {
+    --bg-color: #0f172a;
+    --text-color: #cbd5e1;
+    --accent-color: #38bdf8;
+    --border-color: #1e293b;
+    --code-bg: #1e293b;
+    --code-text: #f43f5e;
+    --btn-bg: #1e293b;
 }
 
-/* ==========================================
-   BASE STYLES
-   ========================================== */
-body {
-    background-color: var(--bg-color);
+/* Style Tambahan untuk Menyejajarkan Tombol */
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.theme-btn {
+    background-color: var(--btn-bg);
     color: var(--text-color);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.7;
-    margin: 0;
-    padding: 0;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.site-main, .header-container, .site-footer {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* ==========================================
-   HEADER & FOOTER
-   ========================================== */
-.site-header {
-    border-bottom: 1px solid var(--border-color);
-    padding: 40px 0 20px 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.02), transparent);
-}
-
-@media (prefers-color-scheme: dark) {
-    .site-header {
-        background: linear-gradient(to bottom, rgba(255,255,255,0.01), transparent);
-    }
-}
-
-.site-logo {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--accent-color);
-    text-decoration: none;
-}
-
-.site-logo:hover {
-    opacity: 0.8;
-}
-
-.site-desc {
-    font-size: 0.95rem;
-    color: var(--text-color);
-    opacity: 0.7;
-    margin-top: 5px;
-}
-
-.site-footer {
-    margin-top: 60px;
-    padding: 20px;
-    text-align: center;
-    font-size: 0.85rem;
-    border-top: 1px solid var(--border-color);
-    opacity: 0.6;
-}
-
-/* ==========================================
-   TYPOGRAPHY & CONTENT
-   ========================================== */
-h1, h2, h3, h4 {
-    color: var(--accent-color);
-    font-family: 'Courier New', Courier, monospace;
-    margin-top: 30px;
-}
-
-a {
-    color: var(--accent-color);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Style khusus box code terminal untuk Linux / CyberSec */
-pre, code {
-    font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    background-color: var(--code-bg);
-    border-radius: 6px;
-}
-
-code {
-    padding: 2px 6px;
-    font-size: 0.9em;
-    color: var(--code-text);
-}
-
-pre {
-    padding: 16px;
-    overflow-x: auto;
     border: 1px solid var(--border-color);
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
 }
 
-pre code {
-    padding: 0;
-    color: var(--text-color);
-    background-color: transparent;
-    font-size: 0.9rem;
+.theme-btn:hover {
+    border-color: var(--accent-color);
 }
