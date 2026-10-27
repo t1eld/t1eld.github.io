@@ -1,2 +1,6 @@
 title: Blog Keren t1eld
 description: Selamat datang di blog baru saya yang otomatis memuat artikel!
+
+collections:
+  posts:
+    output: true
