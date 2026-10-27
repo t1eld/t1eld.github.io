@@ -1,5 +1,6 @@
-title: Blog Keren t1eld
-description: Selamat datang di blog baru saya yang otomatis memuat artikel!
+theme: jekyll-theme-hacker
+title: "t1eld // Root Access"
+description: "Catatan praktis seputar Cybersecurity, Write-ups CTF, dan eksplorasi dunia Linux dari balik layar terminal."
 
 collections:
   posts:
