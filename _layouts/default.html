@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <!-- Menghubungkan ke file CSS kustom kita -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a class="site-logo" href="/">{{ site.title }}</a>
+            <p class="site-desc">{{ site.description }}</p>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <article class="post-content">
+            {{ content }}
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. Powered by Jekyll.</p>
+    </footer>
+
+</body>
+</html>
