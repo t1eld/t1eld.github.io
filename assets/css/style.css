@@ -35,7 +35,7 @@ html, body {
 }
 
 .site-main, .header-container, .site-footer {
-    max-width: 720px;
+    max-width: 980px;
     margin: 0 auto;
     padding: 0 20px;
 }
